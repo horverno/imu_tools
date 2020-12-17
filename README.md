@@ -58,6 +58,32 @@ License
 
  * `rviz_imu_plugin`: BSD
 
+
+Usage
+-----------------------------------
+
+
+`
+rosparam set use_sim_time true
+`
+
+`
+rosrun imu_filter_madgwick imu_filter_node _publish_debug_topics:=true
+`
+
+`
+rosbag play ~/catkin_ws/src/imu_tools/imu_filter_madgwick/sample/ardrone_imu.bag /ardrone/imu:=/imu/data_raw /ardrone/mag:=/imu/mag
+`
+
+`
+rosbag play --clock /mnt/c/bag/gps-imu-2020-12-14-campus-12-40.bag /gps/duro/imu:=/imu/data_raw /gps/duro/mag:=/imu/mag
+`
+
+`
+rosrun imu_filter_madgwick tf_to_topic.py
+`
+
+
 References
 -----------------------------------
  [1] http://www.x-io.co.uk/open-source-imu-and-ahrs-algorithms/
